@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgtwox"
-    tools:context=".MainActivity">
+    android:background="@color/white"
+    tools:context=".SolarMeter">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
                 android:text="ELECTRO"
                 android:textStyle="bold"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#135E7E"
                 android:textSize="20sp" />
 
 
@@ -37,20 +37,38 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="45dp"
                 android:layout_centerHorizontal="true"
-                android:text="DASHBOARD"
+                android:text="Solar Meter"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#135E7E"
                 android:textSize="15sp" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_alignParentLeft="true"
-                android:src="@drawable/logowhite" />
+                android:src="@drawable/logo_main" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/ic_baseline_arrow_back_24" />
 
         </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="Please select the metering system of your solar meter"
+            android:layout_marginStart="10dp"/>
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -77,11 +95,6 @@
                     android:gravity="center"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Generate Monthly Bill"
-                        android:layout_marginStart="10dp"/>
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/analogCard"
@@ -93,23 +106,25 @@
                         app:cardElevation="6dp"
                         app:cardCornerRadius="6sp"
                         android:layout_margin="12dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="100dp"
                             android:padding="10dp">
 
                             <ImageView
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
+                                android:layout_marginTop="10dp"
                                 android:src="@drawable/analog"/>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Analog Meter"
+                                android:text="Net Metering"
                                 android:gravity="center"
                                 android:textColor="#135E7E"
-                                android:layout_marginTop="15dp"
+                                android:layout_marginTop="20dp"
                                 android:textSize="17sp"/>
 
                         </LinearLayout>
@@ -126,92 +141,22 @@
                         android:layout_margin="12dp">
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="100dp"
                             android:padding="10dp">
 
                             <ImageView
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
+                                android:layout_marginTop="10dp"
                                 android:src="@drawable/analog"/>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Digital Meter"
+                                android:text="Net Accounting"
                                 android:gravity="center"
                                 android:textColor="#135E7E"
-                                android:layout_marginTop="15dp"
-                                android:textSize="17sp"/>
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/solarMeter"
-                        android:onClick="navigateToSolarMeter"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:layout_row="1"
-                        app:cardElevation="6dp"
-                        app:cardCornerRadius="6sp"
-                        android:layout_margin="12dp">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="10dp">
-
-                            <ImageView
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:src="@drawable/analog"/>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Solar Meter"
-                                android:gravity="center"
-                                android:textColor="#135E7E"
-                                android:layout_marginTop="15dp"
-                                android:textSize="17sp"/>
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Other"
-                        android:layout_marginStart="10dp"/>
-
-                    <androidx.cardview.widget.CardView
-                        android:onClick="navigateToNextMonth"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:layout_row="1"
-                        app:cardElevation="6dp"
-                        app:cardCornerRadius="6sp"
-                        android:layout_margin="12dp">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="10dp">
-
-                            <ImageView
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:src="@drawable/analog"/>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Next Month Bill"
-                                android:gravity="center"
-                                android:textColor="#135E7E"
-                                android:layout_marginTop="15dp"
+                                android:layout_marginTop="20dp"
                                 android:textSize="17sp"/>
 
                         </LinearLayout>
@@ -228,52 +173,22 @@
                         android:layout_margin="12dp">
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="100dp"
                             android:padding="10dp">
 
                             <ImageView
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
+                                android:layout_marginTop="10dp"
                                 android:src="@drawable/analog"/>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Power Saving Tips"
+                                android:text="Net Plus"
                                 android:gravity="center"
                                 android:textColor="#135E7E"
-                                android:layout_marginTop="15dp"
-                                android:textSize="17sp"/>
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:layout_row="1"
-                        app:cardElevation="6dp"
-                        app:cardCornerRadius="6sp"
-                        android:layout_margin="12dp">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="10dp">
-
-                            <ImageView
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:src="@drawable/analog"/>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Analyse Bill"
-                                android:gravity="center"
-                                android:textColor="#135E7E"
-                                android:layout_marginTop="15dp"
+                                android:layout_marginTop="20dp"
                                 android:textSize="17sp"/>
 
                         </LinearLayout>

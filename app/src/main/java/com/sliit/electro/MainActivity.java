@@ -16,13 +16,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        predictButton = findViewById(R.id.predict);
-        predictButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent navToPredict = new Intent(MainActivity.this, PredictBill.class);
-                startActivity(navToPredict);
-            }
-        });
+    }
+
+    public void navigateToSolarMeter(View view) {
+        Intent navToSolar = new Intent(MainActivity.this, SolarMeter.class);
+        startActivity(navToSolar);
+    }
+
+    public void navigateToNextMonth(View view) {
+        Intent navToPredict = new Intent(MainActivity.this, PredictBill.class);
+        startActivity(navToPredict);
     }
 }

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Electro">
         <activity
+            android:name=".SolarMeter"
+            android:exported="false" />
+        <activity
             android:name=".PredictBill"
             android:exported="false" />
         <activity

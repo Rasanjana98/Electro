@@ -10,7 +10,7 @@ import android.widget.Spinner;
 
 public class PredictBill extends AppCompatActivity {
 
-    Spinner buildingTypeSpinner;
+    Spinner buildingTypeSpinner,familyMemberSpinner;
     private static final String[] paths = {"One Story", "Two Story"};
 
     @Override
@@ -19,13 +19,26 @@ public class PredictBill extends AppCompatActivity {
         setContentView(R.layout.activity_predict_bill);
 
         buildingTypeSpinner  = findViewById(R.id.buildingType);
+        familyMemberSpinner = findViewById(R.id.familyMembers);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, getResources()
-                .getStringArray(R.array.building_array));
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.building_array));
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         buildingTypeSpinner.setAdapter(adapter);
         buildingTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> arg0, View arg1,
+                                       int position, long id) {
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+            }
+        });
+
+        ArrayAdapter<String> adapterFamily = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.familyMemberArray));
+        adapterFamily.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        familyMemberSpinner.setAdapter(adapterFamily);
+        familyMemberSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> arg0, View arg1,
                                        int position, long id) {
